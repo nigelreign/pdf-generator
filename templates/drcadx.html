@@ -49,8 +49,8 @@
 
       th,
       td {
-        text-align: left;
-        padding: 16px;
+        text-align: center;
+        padding: 14px;
       }
 
       tr:nth-child(even) {
@@ -59,32 +59,35 @@
     </style>
   </head>
   <body>
-    <h2 style="color: red;">Dr CADx</h2>
     <center>
-      <div style="background-color: black" class="card">
-        <img src="{{heat_map}}" alt="Avatar" style="height: 500px" />
+      <img src="../../assets/logo.png" height="30" />
+
+      <div style="width: 80%">
+        <div style="background-color: black;" class="card">
+          <img src="{{heat_map}}" alt="Avatar" style="width: 100%;" />
+        </div>
+
+        <div style="background-color: gray" class="card2">
+          <div class="container">
+            <center>
+              <h3 style="color: white"><b>CASE REPORT</b></h3>
+              <hr />
+              <table>
+                <tr>
+                  <th>PATHOLOGY</th>
+                  <th>ABNORMALITY SCORE</th>
+                </tr>
+                {% for result in results %}
+                <tr>
+                  <td>{{result.predictions}}</td>
+                  <td>{{result.probability}}</td>
+                </tr>
+                {% endfor %}
+              </table>
+            </center>
+          </div>
+        </div>
       </div>
     </center>
-
-    <div style="background-color: gray" class="card2">
-      <div class="container">
-        <center>
-          <h3 style="color: white;"><b>CASE REPORT</b></h3>
-          <hr>
-          <table>
-            <tr>
-              <th>PREDICTION</th>
-              <th>PROBABILITY</th>
-            </tr>
-            {% for result in results %}
-            <tr>
-              <td>{{result.predictions}}</td>
-              <td>{{result.probability}}</td>
-            </tr>
-            {% endfor %}
-          </table>
-        </center>
-      </div>
-    </div>
   </body>
 </html>
