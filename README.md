@@ -2,5 +2,6 @@
 
 #how to install
 
-```python3 -m pip install reportlab ```
-```python3 -m pip install PyPDF2 ```
+`python3 -m pip install reportlab `
+`python3 -m pip install PyPDF2 `
+`pip install qrcode`
